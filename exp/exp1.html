@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment</title>
+</head>
+<body>
+    <h1>Experiment 1</h1>
+    <h2>Right click, and open the inspect panel, click on the console button at the top.</h2>
+    <script>
+        //My program takes a singular character and adds another one for 10 lines.
+        var mystring = prompt("Enter 1 character", "");
+        var newstring = "";
+        console.log ([mystring]);
+        console.log (mystring.length);
+        if (mystring.length == 1){
+            //this is a selection
+            //console.log(mystring);
+            //newstring += mystring;
+            //console.log (newstring);
+
+            for (var i = 0; i<10; i++){
+                //this is also a sequence
+                newstring += mystring;
+                console.log (newstring);
+            }
+            //that is one loop
+        }
+
+        else {
+            console.log("There is more than one character")
+        }
+       // var userChar = prompt("Enter a character", "");
+
+/*         if (userChar = [0]) {
+            for (var i = 1; i <= 7; i++) {
+                console.log(userChar);
+            }
+        } */
+
+    </script>
+    
+</body>
+</html>
