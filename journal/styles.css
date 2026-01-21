@@ -1,0 +1,60 @@
+header h1 {
+    font-family: "Homemade Apple", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 250px;
+    color: #7C92C9;
+    margin: 0;
+}
+
+
+body {    
+    font-family: "Josefin Sans", sans-serif;
+    color: #323E5C;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    gap: 20px;
+    margin: 0 auto;
+    /*padding-top: 70px;
+    padding-bottom: 70px;*/  
+    max-width: 900px;  
+
+}
+
+
+div {    
+    font-style: normal;
+    padding-top: 125px;
+    text-align: left;
+}
+
+
+li {
+    list-style-type: none;
+    padding: 40px;
+}
+
+li a:hover {
+  color: #808db9;
+}
+
+footer {
+    background-image: url(images/stripe.jpg);
+    font-family: "Homemade Apple", cursive;
+    color: #323E5C;
+    padding-top: 20px;
+    text-align: center;
+}    
+
+footer address {
+    font-family: "Josefin Sans", sans-serif;
+    color: #323E5C;
+    padding-bottom: 20px;
+}
+
+address a:hover {
+  color: #808db9;
+}
