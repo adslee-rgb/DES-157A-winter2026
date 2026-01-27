@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2
+    </title>
+</head>
+<body>
+    <script>
+    // My program has a list of allowed colors the users can choose from, then once they input their choice the background turns into that color.
+    var colors = ["red", "blue", "green", "yellow", "purple", "pink", "orange"];
+    var userColor = prompt(
+        "What color do you want?\nChoose from: " + colors.join(", ")
+    );
+
+    userColor = userColor.toLowerCase();
+
+    if (colors.includes(userColor)) {
+        document.body.style.backgroundColor = userColor;
+    } else {
+        alert("Sorry, that color is not on the list.");
+    }
+</script>
+</body>
+</html>
