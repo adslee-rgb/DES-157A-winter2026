@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" 
+    rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script> 
+
+
+    <title>MadLib</title>
+</head>
+<body>
+<header>
+    <h1>Happy Half Birthday: The MadLib</h1>
+    <p>by Adriana Lee</p>
+</header>
+
+<main>
+
+    <form id = 'madlibsForm'>
+            <section id = 'formQs'>
+            <div class = 'inputGroup'>
+                    <label for="weekday">Week day:</label>
+                    <input type = "text" name="week day" id="weekday" placeholder ="ie. Tuesday!" required>
+            </div>    
+
+            <div class = 'inputGroup'>
+                <label for ="endinging">Verb(ending with ing):</label>
+                <input type = "text" name = "title" id="endinging" placeholder ="a morning activity possibly" required>
+            </div>
+
+            <div class = 'inputGroup'>
+                <label for ="subject">Class Subject:</label>
+                <input type = "text" name = "class" id="subject" placeholder ="be random!" required>
+                </div>
+
+            <div class = 'inputGroup'>
+                <label for ="noun">Noun:</label>
+                <input type = "text" name = "noun" id="noun" placeholder ="be creative here" required>
+            </div>
+
+            <div class = 'inputGroup'>
+                <label for ="adverb">Adverb:</label>
+                <input type = "text" name = "adverb" id="adverb" placeholder ="hint: verb ending with ly" required>
+            </div>
+
+            <div class = 'inputGroup'>
+                <label for ="color">Color:</label>
+                <input type = "text" name = "color" id="color" placeholder ="your favorite color :)" required>
+            </div>
+
+            <div class = 'inputGroup'>
+                <label for ="room">Room:</label>
+                <input type = "text" name = "room" id="room" placeholder ="in the house" required>
+            </div>
+
+            <div class = 'inputGroup'>
+                <label for ="emotion">Emotion:</label>
+                <input type = "text" name = "emotion" id="emotion" placeholder ="just so many feelings!" required>
+            </div>
+
+            <div class = 'inputGroup'>
+                <label for ="again">Food:</label>
+                <input type = "text" name = "food" id="again" placeholder ="what's your favorite meal?" required>
+            </div>
+
+            <div class = 'inputGroup'>
+                <label for ="Game">Game:</label>
+                <input type = "text" name = "verb" id="verb" placeholder ="card game, board game, video game etc." required>
+            </div>
+
+            <div class = 'inputGroup'>
+                <label for ="flavor">Flavor:</label>
+                <input type = "text" name = "flavor" id="flavor" placeholder =":p" required>
+            </div>
+
+            <div class = 'inputGroup'>
+                <label for ="adjective">Adjective:</label>
+                <input type = "text" name = "Adjective" id="adjective" placeholder ="how was your day?" required>
+            </div>
+                    
+            
+
+        </section>
+        <button type="submit">Generate MadLib</button>    
+    </form>
+
+        <section id="madlib-overlay">
+            <article>
+                <!-- I added this div below, which will get the finished
+                 madlib. I put it in the div because I don't want to lose
+                 the close button below. -->
+                <div id="madlib">
+
+                </div>
+            </article>
+
+        </section>
+
+</main>
+
+        <!--<div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Happy Half Birthday To You!</h2>
+            <p id="madlibResult"></p>
+            <button id="closePopup">Another Birthday?!</button>
+        </div>
+        </div>*/--->
+
+</body>
+</html>

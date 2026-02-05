@@ -1,0 +1,138 @@
+body {
+    background-image: url("images/card0.jpg");
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #638d70;
+    line-height: 1.5em;
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+}
+
+header, footer {
+    text-align: center;
+    height: 125px;
+    display: grid;
+    place-content: center;
+}
+
+main {
+    display: flex;
+    width: 900px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+section {
+    flex: 1;
+    padding: 40px;
+}
+
+#madlib-questions {
+    background-image: url("images/card1.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display:flex;
+    flex:1;
+    flex-direction: column;  
+    padding: 1.25rem;
+}
+
+/* Change display: none; to
+display: block; so that you can 
+design the look of the overlay. */
+
+
+#madlib-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#madlib-questions {
+    background-image: url("images/card1.png");
+    /* 'contain' ensures the whole image (including lace) fits, 
+       but '100% 100%' forces it to fill your set height/width exactly. */
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    
+    /* Increase these values until the text is fully inside the light pink area. 
+       The first number is top/bottom, the second is left/right. */
+    padding: 80px 100px; 
+    
+    /* This keeps the padding INSIDE the box so it doesn't grow bigger */
+    box-sizing: border-box; 
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* This adds the space between the two columns */
+    column-gap: 50px; 
+    row-gap: 20px;
+    width: 100%;
+}
+
+form input {
+    box-sizing: border-box; 
+    width: 100%;
+    
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9em;
+    margin-bottom: 0; 
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 1rem; 
+  max-width: 900px;
+  height: 700px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem; 
+}
+
+button {
+    display: block;
+    margin: 50px;
+    color:rgb(100, 129, 104);
+    background-color: pink;
+    border: none;
+    border-radius: 9px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color:rgb(100, 129, 104);
+    color: pink;
+    transition: .2s ease-in-out;
+}
+/* I added the two rules below, but you can do
+a lot more to style your MadLib and make it more
+visually interesting. */
+span {
+    font-weight: bold;
+    color: rgb(165, 129, 129);
+}
+
+#error {
+    color: red;
+}
