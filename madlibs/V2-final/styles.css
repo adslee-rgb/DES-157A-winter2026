@@ -1,101 +1,46 @@
 body {
-    background-image: url(images/card0.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url("images/card0.jpg");
     font-family: "Itim", cursive;
     font-weight: 400;
     font-style: normal;
-    color: rgb(100, 129, 104);
-    padding-bottom: 50px;
+    color: #638d70;
 }
 
-header h1 {
-    text-align: center;
-    margin: auto;
-    font-family: "Itim", cursive;
-    font-weight: 600;
-    color: rgb(100, 129, 104);
-    font-size: xx-large;
-    padding-top: 150px;
-}
-
-header p {
-    text-align: center;
-    font-size: 1.0em;
-    margin: 0;
+img {
+    display: block;
+    max-width: 80%;
+    height: auto;
 }
 
 header {
-    padding: 40px;
+    text-align: center;
+    height: 125px;
+    place-content: center;
 }
 
 
-form{
+main {    
+    /*background-image: url("images/card1.png");
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    width: 900px;*/
+    height: 600px;
+    margin: auto;
+}
+
+section {
+    flex: 1;
+}
+
+/*#madlib-questions {
+    background-image: url("images/card1.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
     display:flex;
     flex:1;
-    flex-direction: column;    
-    background-image: url(images/card1.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 100px;
-}
-#formQs{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.0rem;
-    margin: auto;
-    width: 840px;
-    padding-bottom: 30px; 
-  /*margin-bottom: 50px; 
-  margin-top: 50px;*/
-    
-}
-
-.inputGroup {
-    display: flex;
-    flex-direction: column;
-  }
-  
-.inputGroup label {
-    margin-bottom: 0.25rem;
-}
-#send-form{
-    color: rgb(100, 129, 104);
-    width: 225px;
-    height: 60px;
-    margin: auto;
-    border-radius: 15px;
-    border:none;
-    color: white;
-}
-#formQs input{
-    height: 30px;
-    border-radius:5px;
-    border: none;
-    font-size: 1em;
-    padding-left: 9px;
-    margin-bottom: -10px;
-}
-
-input::placeholder{
-    font-size: .87em;
-} 
- 
-button {
-    display: block;
-    margin: 50px auto;
-    color:rgb(100, 129, 104);
-    background-color: pink;
-    border: none;
-    border-radius: 9px;
-    padding: 10px;
-}
-
-button:hover {
-    background-color:rgb(100, 129, 104);
-    color: pink;
-    transition: .2s ease-in-out;
-}
+    flex-direction: column;  
+    padding: 1.25rem;
+}*/
 
 /* Change display: none; to
 display: block; so that you can 
@@ -109,123 +54,101 @@ design the look of the overlay. */
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+
 }
 
 #madlib-overlay article {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    width: 60%;
-    height: 70vh;
-    padding: 40px;
+    background-color: rgb(250, 211, 218);
+    padding: 30px;
+    width: 700px;
+    height: 600px;
+    margin: auto;
+    line-height: 1em;  
+
+
 }
 
-form input, form label {
-    display: block;
+.border {
+    background-image: url(images/border1.png); 
+    background-position: top;   
+    background-repeat: repeat-x;
+    padding-top: 54px;   
+    width: 700px;
+    height: 75vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;    
+    transform: translate(-50%, -50% );
+}
+
+
+#madlib-overlay article span {
+    color:rgb(80, 32, 40);
+    text-decoration: underline;
+}
+
+#madlib-questions {
+    background-color: rgb(250, 211, 218);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    padding-top: none;
+    padding-left: 80px;
+    padding-right: 80px;
+    box-sizing: border-box; 
+    width: 700px;
+    margin: auto;
+}
+
+.box {
+  border: 30px solid transparent; /* Essential: defines the border area and ensures fallback */
+  border-image: url("path/to/your/image.png") 30% round;
+}
+
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* This adds the space between the two columns */
 }
 
 form input {
-    margin-bottom: 1em;
-}
-/*.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.popup-content {
-  background-color: #ffe1d6;
-  padding: 30px;
-  border-radius: 20px;
-  width: 60%;
-  max-width: 500px;
-  text-align: center;
-}
-
-.hidden {
-  display: none;
-}
-
-
-
-
-/*the other page*
-#madLibOutput.hidden{
-    display:none;
-}
-#madLibOutput.showing{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#plaque{
-    background-color: rgba(248, 32, 201, 0.73);
-    border-radius: 20px;
-    padding: 20px;
-    max-width: 620px;
+    box-sizing: border-box; 
     width: 100%;
-    margin-top: 1rem;
+    padding: 10px 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9em;
 }
 
-h2{
-    color: white;
-    font-family: "Nanum Gothic Coding", monospace;
-    font-size: clamp(2.5rem, 6vw, 57px);
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.5rem;
-    text-align: left;
+.form-grid {
+  gap: 0.75rem 1rem; 
 }
 
-h3{
-    font-weight: 400;
-    font-size: 1.4rem;
-    margin-bottom: -1rem;
-}
-#plaque p{
-    color: white;
-}
-#plaque #year {
-    color: black;
-    font-style: italic;
-    font-size: clamp(1.2em, 1vw, 16px);
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem; 
 }
 
-#restart {
-    max-width: 300px;
+button {
+    color:rgb(100, 129, 104);
+    background-color: pink;
+    border: none;
+    border-radius: 9px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color:rgb(100, 129, 104);
+    color: pink;
+    transition: .2s ease-in-out;
+}
+
+#error {
+    color: red;
+}
+
+footer {
     text-align: center;
-  }
-#restart p{
-    font-family:"Nanum Gothic Coding", monospace;
-    color:#F820C9;
-    font-size: clamp(1.5rem, 3vw,40px);
-    line-height: 1.2em;
-}
-#submitAgain{
-    display:block;
-    background-color: #3603D0;
-    width: 225px;
-    padding: 10px 30px 10px 30px;
-    margin: auto;
-    border-radius: 15px;
-    border:none;
-    color: white;
-    font-family:"Nanum Gothic Coding", monospace;
-    font-size: 1.5em;
-    transition: .2s ease-in-out;        
-}
-#submitAgain:hover{
-    background-color:rgba(248, 32, 201);
-    transition: .2s ease-in-out;        
 }

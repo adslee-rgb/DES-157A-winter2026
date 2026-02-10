@@ -1,11 +1,11 @@
-(function (){
-     "use strict";
-     console.log("reading js");
+(function(){
+    'use strict';
+    console.log('reading js');
 
-// this element will hole the madlib
+    // this element will hole the madlib
     const madlib = document.querySelector('#madlib');
     // this is the form for submission
-    const form = document.querySelector('#madlibsFormform');
+    const form = document.querySelector('form');
     // this is the overlay element
     const madlibOverlay = document.querySelector('#madlib-overlay');
     // this is the close button in the overlay
@@ -13,15 +13,13 @@
     // this is the div that holds the error messages
     const errorMessage = document.querySelector('#error');
 
-
     /* Here I am capturing the submission of the form. I noticed
     that some students in class are using a button to trigger the 
     script rather that form submission. That is ok, but the event
     listener will have to be updated to capture the click of the 
     button instead of the submission of the form. */
-    form.addEventListener()'submit', function(event){
+    form.addEventListener('submit', function(event){
         event.preventDefault();
-
 
         // Make sure you update everything to reflect the fields you have on YOUR form.
           const week = document.querySelector('#weekday').value;
@@ -37,9 +35,10 @@
           const flavor = document.querySelector('#flavor').value;
           const adj = document.querySelector('#adjective').value;
 
-          let myText;
+        // Create this empty variable
+        let myText;
 
-          if( week == ''){
+             if( week == ''){
                alert('Please fill in the blank');
                document.querySelector('#weekday').focus();
           }else  if( ending == ''){
@@ -81,21 +80,18 @@
           }else  if( adj == ''){
                alert("Please fill in the blank");
                document.querySelector('#adjective').focus();
-               
-          } else {
+        } else {
             /* Notice this is just a copy/paste of what's in the
             MadLib HTML. It will get placed on the page and styled
             by the styles on the stylesheet. The variables from above
             have been added. */
-            myText = `<h2>Happy Half Birthday!</h2>
-               <p>It was a strange a ${week}. I woke up, did some ${ending}, and when I was eating breakfast, I noticed my housemates whispering as if I couldn’t see them. I went to my ${subject} class but couldn’t focus on the lecture about ${noun} because of what happened this morning.
-               As I biked  back home, I wondered what my housemates possibly could’ve been talking about without me. As I ${adverb} opened the door to the apartment, I hear “SURPRISE!”. My housemate put a ${color} party hat on me, and I saw a “Happy Half Birthday” banner hung behind them in the ${room}. 
-               I was ${e1}, how could I have forgotten my half birthday! My housemates made half of my favorite food, ${again}, and we ate and played half of my favorite game ${game}, We finished off my eating half of a ${flavor} cake! I’m so glad my housemates went halfway to make the day so ${adj}. Now, as long as they don’t forget my actual birthday…</p>`;
-
-          }
+                myText = `<h2>Happy Half Birthday!</h2>
+               <p>It was a strange a <span>${week}</span>. I woke up, did some <span>${ending}</span>, and when I was eating breakfast, I noticed my housemates whispering as if I couldn’t see them. I went to my <span>${subject}</span> class but couldn’t focus on the lecture about <span>${noun}</span> because of what happened this morning.
+               As I biked  back home, I wondered what my housemates possibly could’ve been talking about without me. As I <span>${adverb}</span> opened the door to the apartment, I hear “SURPRISE!”. My housemate put a <span>${color}</span> party hat on me, and I saw a “Happy Half Birthday” banner hung behind them in the <span>${room}</span>. 
+               I was <span>${e1}</span>, how could I have forgotten my half birthday! My housemates made half of my favorite food, <span>${again}</span>, and we ate and played half of my favorite game <span>${game}</span>, We finished off my eating half of a <span>${flavor}</span> cake! I’m so glad my housemates went halfway to make the day so <span>${adj}</span>. Now, as long as they don’t forget my actual birthday…</p>`;
 
 
-    
+            // clear out the form
             document.querySelector('#weekday').value = '';
             document.querySelector('#endinging').value = '';
             document.querySelector('#subject').value = '';
@@ -112,26 +108,23 @@
 
             // put the MadLib on the page
             madlib.innerHTML = myText;
-            /* below shows the overlay. If you swap classes 
-            for showing and hidden, you can do that instead. 
-            Here I am setting the overlay to display block.
-            Look in the inspector to see it happen. */
             madlibOverlay.style.display = "block";
-
-        }
+          }
     });
 
-          //I added an eventlistener for closing the form.
-          closeBtn.addEventListener('click', function(event){
-               event.preventDefault();
-               madlibOverlay.style.display = "none";
-          });
+    //I added an eventlistener for closing the form.
+    closeBtn.addEventListener('click', function(event){
+        event.preventDefault();
+        madlibOverlay.style.display = "none";
+    });
 
-          /* for best practice, I added an event listener for closing
-          the MadLib with the escape key. */
-          document.addEventListener('keydown', function (event) {
-               if (event.key === 'Escape') {
-                    madlibOverlay.style.display = "none";
-               }
-          });
-     }());
+    /* for best practice, I added an event listener for closing
+    the MadLib with the escape key.*/
+    
+    
+    /*document.addEventListener('keydown', function (event){ 
+        if (event.key === 'Escape') {
+            madlibOverlay.style.display = "none";
+        }
+    });*/
+     })();
