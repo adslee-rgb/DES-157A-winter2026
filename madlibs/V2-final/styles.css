@@ -63,7 +63,7 @@ design the look of the overlay. */
     width: 700px;
     height: 600px;
     margin: auto;
-    line-height: 1em;  
+    line-height: 3em;  
 
 
 }
@@ -73,13 +73,15 @@ design the look of the overlay. */
     background-position: top;   
     background-repeat: repeat-x;
     padding-top: 54px;   
-    width: 700px;
+    /*width: 700px;*/
     height: 75vh;
     position: absolute;
     left: 50%;
     top: 50%;    
     transform: translate(-50%, -50% );
 }
+
+
 
 
 #madlib-overlay article span {

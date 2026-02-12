@@ -21,13 +21,23 @@ article {
 
 }
 
-article p {
+/*article p {
+    border: 2px solid #6c7fbf;
+    border-radius: 16px;
+    padding: 24px;
+    background-color: #fff;  
+}*/
+
+figure {
+    text-align: center;
+}
+
+div {
     border: 2px solid #6c7fbf;
     border-radius: 16px;
     padding: 24px;
     background-color: #fff;  
 }
-
 
 body {
     font-family: "Josefin Sans", sans-serif;
