@@ -1,0 +1,46 @@
+.grid-bg {
+  min-height: 100vh;
+
+  background-image:
+    url("images/summer.jpg"),
+    url("images/fall.jpg"),
+    url("images/winter.jpg"),
+    url("images/spring.jpg");
+
+  background-size:
+    50% 50%,
+    50% 50%,
+    50% 50%,
+    50% 50%;
+
+  background-position:
+    left top,
+    right top,
+    left bottom,
+    right bottom;
+
+  background-repeat: no-repeat;
+}
+
+.center-image {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 300px; 
+  height: auto;
+
+  border-radius: 12px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); 
+  z-index: 10;   
+}
+
+h1 {
+    color: white;
+    font-family: "Short Stack", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    padding-top: 200px;
+}
