@@ -1,0 +1,101 @@
+body{
+    margin:0;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: rgb(73, 58, 58);
+    background:#ffffff;
+    text-align:center;
+}
+
+/* Screens */
+
+#homeScreen{
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.screen{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1s;
+}
+
+.screen.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* Buttons */
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    margin:10px;
+    background:#55453b;
+    color:white;
+}
+
+button:hover{
+    background:#4a5f48;
+}
+
+/* Ingredients */
+
+.ingredients{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+margin:20px;
+}
+
+.ingredient{
+background:none;
+border:none;
+cursor:pointer;
+}
+
+.ingredient img{
+width:100px;
+height:100px;
+object-fit:contain;
+transition:transform .2s;
+}
+
+.ingredient:hover img{
+transform:scale(1.1);
+}
+
+/* Cup */
+
+#cup{
+    width:200px;
+    min-height:120px;
+    border:3px solid #444;
+    background:white;
+    margin:20px;
+    padding:10px;
+}
+
+/* Ingredient items in cup */
+
+.cupItem{
+    background:#ffeaa7;
+    margin:5px;
+    padding:5px;
+    border-radius:4px;
+}

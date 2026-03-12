@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<title>Drink Maker Game</title>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- HOME SCREEN -->
+
+<div id="homeScreen" class="screen active">
+    <h1>Matcha Cafe Game</h1>
+    <button id="playBtn">Play!</button>
+</div>
+
+
+<!-- ORDER SCREEN -->
+
+<div id="orderScreen" class="screen">
+    <h2>Drink Order</h2>
+    <p id="orderText"></p>
+    <button id="startMakingBtn">Let's make the drink!</button>
+</div>
+
+
+<!-- DRINK MAKING SCREEN -->
+
+<div id="gameScreen" class="screen">
+
+    <h2>Make the Drink</h2>
+
+
+    <div class="ingredients">
+
+    <button class="ingredient" data-ingredient="Matcha">
+    <img src="images/matcha.jpeg" alt="matcha">
+    </button>
+
+    <button class="ingredient" data-ingredient="Milk">
+    <img src="images/milk.jpg" alt="milk">
+    </button>
+
+    <button class="ingredient" data-ingredient="Hojicha">
+    <img src="images/hojicha.jpeg" alt="Hojicha">
+    </button>
+
+    <button class="ingredient" data-ingredient="Strawberry">
+    <img src="images/strawberry.jpeg" alt="strawb">
+    </button>
+
+    <button class="ingredient" data-ingredient="Black Sesame Foam">
+    <img src="images/blacksesame.jpeg" alt="black sesame foam">
+    </button>
+
+    <button class="ingredient" data-ingredient="Coconut">
+    <img src="images/coconut.jpeg" alt="coconut">
+    </button>
+
+    <button class="ingredient" data-ingredient="Matcha Foam">
+    <img src="images/matchafoam.jpeg" alt="matcha foam">
+    </button>
+
+
+    </div>
+
+    <h3>Your Cup:</h3>
+    <div id="cup"></div>
+
+    <button id="checkDrink">Serve Drink</button>
+
+    <p id="result"></p>
+
+    <button id="nextOrder">Next Order</button>
+
+</div>
+
+</body>
+</html>

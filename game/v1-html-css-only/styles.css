@@ -50,4 +50,52 @@ main img:nth-child(4) {
 main img:nth-child(5) {
     grid-column: 3;
     grid-row: 3;
+}*/
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Overlay screen */
+#overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#2c3e2f;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+
+    opacity:1;
+    transition:opacity 0.8s ease;
+}
+
+/* Fade class */
+#overlay.fadeOut{
+    opacity:0;
+    pointer-events:none;
+}
+
+/* Game screen */
+#game{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+/* Play button */
+#playBtn{
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
 }
