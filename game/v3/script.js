@@ -1,152 +1,128 @@
 (function(){
 
+document.addEventListener("DOMContentLoaded", function(){
+
+//
 const correctSound = new Audio("sounds/yay.mp3");
 const wrongSound = new Audio("sounds/yourmom.mp3");
 
-const homeScreen = document.getElementById("homeScreen")
-const orderScreen = document.getElementById("orderScreen")
-const gameScreen = document.getElementById("gameScreen")
+// SCREENS
+const homeScreen = document.querySelector("#homeScreen");
+const orderScreen = document.querySelector("#orderScreen");
+const gameScreen = document.querySelector("#gameScreen");
 
-const playBtn = document.getElementById("playBtn")
-const startMakingBtn = document.getElementById("startMakingBtn")
+// BUTTONS
+const playBtn = document.querySelector("#playBtn");
+const startMakingBtn = document.querySelector("#startMakingBtn");
+const checkDrink = document.querySelector("#checkDrink");
+const nextOrder = document.querySelector("#nextOrder");
 
-const orderText = document.getElementById("orderText")
+// TEXT / DISPLAY
+const orderText = document.querySelector("#orderText");
+const result = document.querySelector("#result");
+const cup = document.querySelector("#cup");
 
-const ingredientButtons = document.querySelectorAll(".ingredient")
+// INGREDIENTS
+const ingredientButtons = document.querySelectorAll(".ingredient");
 
-const cup = document.getElementById("cup")
-
-const checkDrink = document.getElementById("checkDrink")
-const result = document.getElementById("result")
-const nextOrder = document.getElementById("nextOrder")
-
-let playerDrink = []
-
-let currentOrder = []
+let playerDrink = [];
+let currentOrder = [];
 
 const drinks = [
 {
-name:"Coconut Matcha Cloud",
-ingredients:["Matcha Foam","Coconut"]
+    name:"Coconut Matcha Cloud",
+    ingredients:["Matcha Foam","Coconut"]
 },
 {
-name:"Black Sesame Foam Hojicha",
-ingredients:["Hojicha","Milk","Black Sesame Foam"]
+    name:"Black Sesame Foam Hojicha",
+    ingredients:["Hojicha","Milk","Black Sesame Foam"]
 },
 {
-name:"Strawberry Matcha Latte",
-ingredients:["Matcha","Strawberry","Milk"]
+    name:"Strawberry Matcha Latte",
+    ingredients:["Matcha","Strawberry","Milk"]
 },
-]
+];
 
-
+// SCREEN SWITCH
 function changeScreen(newScreen){
-
-homeScreen.classList.remove("active")
-orderScreen.classList.remove("active")
-gameScreen.classList.remove("active")
-
-newScreen.classList.add("active")
-
+    document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+    });
+    newScreen.classList.add("active");
 }
 
+// PLAY BUTTON
+playBtn.addEventListener("click", function(){
+    changeScreen(orderScreen);
+    generateOrder();
+});
 
-playBtn.addEventListener("click",function(){
+// START MAKING
+startMakingBtn.addEventListener("click", function(){
+    changeScreen(gameScreen);
+});
 
-changeScreen(orderScreen)
-
-generateOrder()
-
-})
-
-
-startMakingBtn.addEventListener("click",function(){
-
-changeScreen(gameScreen)
-
-})
-
-
+// GENERATE ORDER
 function generateOrder(){
+    const randomDrink = drinks[Math.floor(Math.random()*drinks.length)];
 
-const randomDrink = drinks[Math.floor(Math.random()*drinks.length)]
+    currentOrder = randomDrink.ingredients;
 
-currentOrder = randomDrink.ingredients
+    orderText.innerText =
+        randomDrink.name + " (" + randomDrink.ingredients.join(", ") + ")";
 
-orderText.innerText = randomDrink.name + 
-" (" + randomDrink.ingredients.join(", ") + ")"
-
-playerDrink = []
-cup.innerHTML = ""
-result.innerText = ""
-
+    playerDrink = [];
+    cup.innerHTML = "";
+    result.innerText = "";
 }
 
-
+// INGREDIENT CLICK
 ingredientButtons.forEach(button => {
+    button.addEventListener("click", function(){
 
-button.addEventListener("click",function(){
+        const ingredient = button.dataset.ingredient;
+        playerDrink.push(ingredient);
 
-const ingredient = button.dataset.ingredient
+        const item = document.createElement("div");
+        item.classList.add("cupItem");
+        item.innerText = ingredient;
 
-playerDrink.push(ingredient)
+        cup.appendChild(item);
+    });
+});
 
-const item = document.createElement("div")
+// CHECK DRINK
+checkDrink.addEventListener("click", function(){
 
-item.classList.add("cupItem")
+    let correct = true;
 
-item.innerText = ingredient
+    if(playerDrink.length !== currentOrder.length){
+        correct = false;
+    } else {
+        for(let i = 0; i < currentOrder.length; i++){
+            if(playerDrink[i] !== currentOrder[i]){
+                correct = false;
+                break;
+            }
+        }
+    }
 
-cup.appendChild(item)
+    if(correct){
+        result.innerText = "Nice job! Correct!";
+        correctSound.play();
+    } else {
+        result.innerText = "Nope, try a new order :/";
+        wrongSound.play();
+    }
 
-})
+});
 
-})
+// NEXT ORDER
+nextOrder.addEventListener("click", function(){
+    changeScreen(orderScreen);
+    generateOrder();
+});
 
-
-checkDrink.addEventListener("click",function(){
-
-let correct = true
-
-if(playerDrink.length !== currentOrder.length){
-
-correct = false
-
-}else{
-
-for(let i=0;i<currentOrder.length;i++){
-
-if(playerDrink[i] !== currentOrder[i]){
-
-correct = false
-
-}
-
-}
-
-}
-
-if(correct){
-
-result.innerText = "Nice job! Correct!"
-correctSound.play()
-
-}else{
-
-result.innerText = "Nope, try a new order :/"
-wrongSound.play()
-
-}
-
-})
-
-
-nextOrder.addEventListener("click",function(){
-
-changeScreen(orderScreen)
-
-generateOrder()
-
-})
+});
 
 })();
